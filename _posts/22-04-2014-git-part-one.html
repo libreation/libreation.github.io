@@ -1,0 +1,37 @@
+---           
+layout: post
+title: Git - part I
+date: 2014-04-22 18:47:35 +0530 
+updated: 2014-04-22 18:47:35 +0530 
+comments: true
+---
+
+<b>What is git</b>
+<p>
+    git is a version control system. that keeps a repository of  (source code)files, which tracks the changes made in the code. It was designed and developed by Linus Torlvards, for the version control of the linux kernel. Git is not just anothe VCS, because it approaches the changes made in the files in an entirely different way from other VCSs like SUbversion that exists today. Below are a few things you should know before using Git.
+</p>
+
+<p>
+<b>Snapshots of changes</b> <br> Git does not stores the entire set of files in a source code tree. It just stores the differences made- A snapshot of the file system. If no change is ade to a file, it doesn't take the snapshot of that file, instead keeps a reference to the previous snapshot of the file.
+</p>   
+
+<p>
+<b>Everything is local</b> <br>Git can record change even when there is no network connection. This is because git doesn't store the snapshots in a remote server. All changes are first recorded in the local server, and can be pushed to the remote server when there is a network connection. Changes pushed to the remote server by other developers have to be pulled and merged with your local repository before pushing yours. Git won't allow you to push your changes to the remote server if there are changelogs present in the remote and not in your local repository.
+</p>   
+
+<p>
+<b>Content addressible</b> <br>Git addresses a file/tree using their checksum, a SHA-1 hash, a 40-character string composed of hexadecimal characters (0–9 and a–f) and calculated based on the contents of a file or directory structure, and not using a memory address. This makes the retrieval of data very fast, and provides more integrity and security to the content.
+</p>   
+
+<p>
+<b>Overview of a local git repository</b> <br>A file in a git repo can have three states. Look at the image below<br>
+<img src="/images/git_one/stages.png" alt="3 stages of git" />
+<p>
+The process is simple. You make changes to one/more file in your working directory, then <i>add</i> them to staging area, and then <i>commit</i> your changes. Git creates a changelog(referred by a SHA-1 hash), only when you <i>commit</i> the changes. That is, all the changes you made become official only when you <i>commit</i> those changes.
+</p>
+</p>   
+
+
+
+
+    

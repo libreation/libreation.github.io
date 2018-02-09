@@ -1,0 +1,59 @@
+---           
+layout: post
+title: chmod explained
+date: 2014-04-21 20:47:35 +0530 
+updated: 2014-04-21 20:47:35 +0530 
+comments: true
+---
+
+<p>
+    <i>chmod</i> is a very common command that every linux user should learn about. It is a typical example for the simplicity of *nix systems. This article describes what is <i>chmod</i> and how does it work.
+</p>
+<p>
+    <i>chmod</i> stands for "change mode". It is used to change the access permission of a file. <i>chmod</i> basically needs two arguments, the permission and the filename. In linux there are three types of permissions for a file viz. read, write and execute. These permissions can be set for three levels of users separately- the owner(user who created the file), the group(users who shares same group with the owner), and the world. The three permissions(read, write and execute) are represented by octal numbers in linux. these are explained below
+</p>
+<style type="text/css">
+    @page {  }
+    table { border-collapse:collapse; border-spacing:0; empty-cells:show }
+    td, th { vertical-align:top; font-size:10pt;}
+    h1, h2, h3, h4, h5, h6 { clear:both }
+    ol, ul { margin:0; padding:0;}
+    li { list-style: none; margin:0; padding:0;}
+    <!-- "li span.odfLiEnd" - IE 7 issue-->
+    li span. { clear: both; line-height:0; width:0; height:0; margin:0; padding:0; }
+    span.footnodeNumber { padding-right:1em; }
+    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }
+    * { margin:0;}
+    .ta1 { writing-mode:lr-tb; }
+    .Default { font-family:Arial; }
+    .ce1 { font-family:Arial; background-color:#ffff00; border-width:0.0133cm; border-style:solid; border-color:#000000; text-align:center ! important; margin-left:0cm; }
+    .ce2 { font-family:Arial; border-width:0.0133cm; border-style:solid; border-color:#000000; text-align:center ! important; margin-left:0cm; }
+    .ce3 { font-family:Arial; text-align:center ! important; margin-left:0cm; }
+    .co1 { width:3.621cm; }
+    .co2 { width:9.394cm; }
+    .co3 { width:2.258cm; }
+    .ro1 { height:0.427cm; }
+    .ro2 { height:0.452cm; }
+    <!-- ODF styles with no properties representable as CSS -->
+    { }
+</style>
+<table border="0" cellspacing="0" cellpadding="0" class="ta1"><colgroup><col width="158"/><col width="411"/></colgroup><tr class="ro1"><td style="text-align:left;width:3.621cm; " class="ce1"><p>Octet number</p></td><td style="text-align:left;width:9.394cm; " class="ce1"><p>Description</p></td></tr><tr class="ro1"><td style="text-align:right; width:3.621cm; " class="ce2"><p>1</p></td><td style="text-align:left;width:9.394cm; " class="ce2"><p>read</p></td></tr><tr class="ro1"><td style="text-align:right; width:3.621cm; " class="ce2"><p>2</p></td><td style="text-align:left;width:9.394cm; " class="ce2"><p>write</p></td></tr><tr class="ro1"><td style="text-align:right; width:3.621cm; " class="ce2"><p>3</p></td><td style="text-align:left;width:9.394cm; " class="ce2"><p>Read and write(1+2)</p></td></tr><tr class="ro1"><td style="text-align:right; width:3.621cm; " class="ce2"><p>4</p></td><td style="text-align:left;width:9.394cm; " class="ce2"><p>execute</p></td></tr><tr class="ro1"><td style="text-align:right; width:3.621cm; " class="ce2"><p>7</p></td><td style="text-align:left;width:9.394cm; " class="ce2"><p>read, write and execute(1+2+3)</p></td></tr><tr class="ro1"><td style="text-align:left;width:3.621cm; " class="ce3"> </td><td style="text-align:left;width:9.394cm; " class="ce3"> </td></tr><tr class="ro1"><td style="text-align:left;width:3.621cm; " class="ce3"> </td><td style="text-align:left;width:9.394cm; " class="ce3"> </td></tr></table><table border="0" cellspacing="0" cellpadding="0" class="ta1"><colgroup><col width="99"/></colgroup><tr class="ro2"><td style="text-align:left;width:2.258cm; " class="Default"> </td></tr></table><table border="0" cellspacing="0" cellpadding="0" class="ta1"><colgroup><col width="99"/></colgroup><tr class="ro2"><td style="text-align:left;width:2.258cm; " class="Default"> </td></tr></table>
+</p>
+<p>
+    Below is an example
+    <br><br><i>$ chmod 743 ~/document.txt</i>
+    <br>
+    Here, this is what the "743" means.
+    <br><br>7 - read, write and execute permission for the file owner,
+    <br>4 - read and write permission for users in the same group as of the file owner,
+    <br>3 - read only permission for rest of the world. 
+</p>
+<p>
+    You can change the permissions of all files in a folder by using the -R option. <br>Ex: <i>$ chmod -R 743 ~/documents</i>. Here <i>documents </i> is a folder.
+</p>
+<p>
+    There is another way of representing the permissions using r, w and x. Details can be found <a href="http://en.wikipedia.org/wiki/Chmod">here</a>. But I prefer using the octet method, as it's simpler.
+<p>
+<p>
+    PS: to make permission for a file same as another file, use <i>$ chmod --reference=file1 file2</i>
+</p>
